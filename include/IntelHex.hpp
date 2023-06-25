@@ -48,7 +48,7 @@ class IHEX_RECORD {
   // IHEX_line(uint16_t addr, std::string data,
   //           DATA_TYPE type = (DATA_TYPE::RECORD_DAT))
   //     : _offset{addr}, _data{data}, record_type{type} {};
-  
+
   static const int8_t                 //
       _marker = ':',                  //
       _10 = 0x0A,                     //
@@ -143,7 +143,7 @@ class IHEX_CLEAR {
 std::ostream& operator<<(std::ostream& os, const IHEX_CLEAR ih) {
   std::string        //
       MemoryDump{};  ///< Дамп пам'яті
-  for (size_t MemoryCell{0}; MemoryCell <= ih._MemmorySize; MemoryCell++)
+  for (size_t MemoryCell{0}; MemoryCell < ih._MemmorySize; MemoryCell++)
     MemoryDump += static_cast<int8_t>(ih._CellFill);
   uint16_t RecordsCount = 0,  ///< Кількість
       Offset,                 /// < Відносиний офсет
@@ -160,7 +160,7 @@ std::ostream& operator<<(std::ostream& os, const IHEX_CLEAR ih) {
                       ih._RecordType      // Тип запису
     );
     RecordsCount++;  // переходимо до наступного
-    if (LentToEnd <= ih._RecordLength) os << IHEX_RECORD();
+    if (LentToEnd <= ih._RecordLength and RecordsCount > 1) os << IHEX_RECORD();
     // if (0 == ih._RecordLength) break;
   } while (LentToEnd > ih._RecordLength);  // повтороємо допоки повні рядки
   return os;

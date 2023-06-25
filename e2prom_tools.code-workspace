@@ -3,6 +3,9 @@
 		{
 			"path": "."
 		}
+		{
+			"path": "/lib/avr/include/avr"
+		}
 	],
 	"settings": {
 		"files.autoSave": "onFocusChange",

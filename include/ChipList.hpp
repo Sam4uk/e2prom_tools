@@ -23,12 +23,12 @@ const struct AVR_chips {
     {"c128", "AT90CAN128", 0x00},          ///< AT90CAN128
     {"c32", "AT90CAN32", 0x00},            ///< AT90CAN32
     {"c64", "AT90CAN64", 0x00},            ///< AT90CAN64
-    {"pwm2", "AT90PWM2", 0x00},            ///< AT90PWM2
-    {"pwm216", "AT90PWM216", 0x00},        ///< AT90PWM216
-    {"pwm2b", "AT90PWM2B", 0x00},          ///< AT90PWM2B
-    {"pwm3", "AT90PWM3", 0x00},            ///< AT90PWM3
-    {"pwm316", "AT90PWM316", 0x00},        ///< AT90PWM316
-    {"pwm3b", "AT90PWM3B", 0x00},          ///< AT90PWM3B
+    {"pwm2", "AT90PWM2", 0x1FF},            ///< AT90PWM2
+    {"pwm216", "AT90PWM216", 0x1FF},        ///< AT90PWM216
+    {"pwm2b", "AT90PWM2B", 0x1FF},          ///< AT90PWM2B
+    {"pwm3", "AT90PWM3", 0x1FF},            ///< AT90PWM3
+    {"pwm316", "AT90PWM316", 0x1FF},        ///< AT90PWM316
+    {"pwm3b", "AT90PWM3B", 0x1FF},          ///< AT90PWM3B
 #endif
   {"1200", "AT90S1200", 0x3F},       ///< AT90S1200
       {"2313", "AT90S2313", 0x7F},   ///< AT90S2313
@@ -148,7 +148,7 @@ const struct AVR_chips {
     {"t416", "ATtiny416", 0x00},           ///< ATtiny416
     {"t417", "ATtiny417", 0x00},           ///< ATtiny417
     {"t4313", "ATtiny4313", 0x00},         ///< ATtiny4313
-    {"t43u", "ATtiny43u", 0x00},           ///< ATtiny43u
+    // {"t43u", "ATtiny43u", 0x00},           ///< ATtiny43u
     {"t44", "ATtiny44", 0x00},             ///< ATtiny44
     {"t441", "ATtiny441", 0x00},           ///< ATtiny441
     {"t45", "ATtiny45", 0x00},             ///< ATtiny45
@@ -163,7 +163,7 @@ const struct AVR_chips {
     {"t84", "ATtiny84", 0x00},             ///< ATtiny84
     {"t841", "ATtiny841", 0x00},           ///< ATtiny841
     {"t85", "ATtiny85", 0x00},             ///< ATtiny85
-    {"t861", "ATtiny861", 0x00},           ///< ATtiny861
+    {"t861", "ATtiny861", 0x7F},           ///< ATtiny861
     {"t88", "ATtiny88", 0x00},             ///< ATtiny88
     {"t9", "ATtiny9", 0x00},               ///< ATtiny9
     {"x128a1", "ATxmega128A1", 0x00},      ///< ATxmega128A1
@@ -201,7 +201,7 @@ const struct AVR_chips {
     {"x32d4", "ATxmega32D4", 0x00},        ///< ATxmega32D4
     {"x32e5", "ATxmega32E5", 0x00},        ///< ATxmega32E5
     {"x384c3", "ATxmega384C3", 0x00},      ///< ATxmega384C3
-    {"x384d3", "ATxmega384D3", 0x00},      ///< ATxmega384D3
+    {"x384d3", "ATxmega384D3", 4096U},      ///< ATxmega384D3
     {"x64a1", "ATxmega64A1", 0x00},        ///< ATxmega64A1
     {"x64a1u", "ATxmega64A1U", 0x00},      ///< ATxmega64A1U
     {"x64a3", "ATxmega64A3", 0x00},        ///< ATxmega64A3
