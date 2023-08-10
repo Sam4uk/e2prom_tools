@@ -2,7 +2,7 @@ name: CMake
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
   pull_request:
 #     branches: [ "main" ]
 
@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: boost
+      run: sudo apt-get install libboost-all-dev -y
     - uses: actions/checkout@v3
 
     - name: Configure CMake
