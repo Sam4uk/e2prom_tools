@@ -5,3 +5,13 @@
 ## e2clean
 
 Генератор файлу для очищення EEPROM
+
+### dependence
+sudo apt-get install libboost-all-dev make cmake
+
+
+```zsh
+mkdir build
+cmake -B build
+cmake --build build
+```

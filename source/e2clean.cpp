@@ -1,9 +1,9 @@
 
 #include <boost/program_options.hpp>
 #include <cassert>
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "ChipList.hpp"
 #include "IntelHex.hpp"
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
   desc.add_options()("help", "produce help message")("version,v",
                                                      "print version string");
   constexpr size_t listSize = sizeof(E2PROM_list) / sizeof(*E2PROM_list);
-  for (auto i = 0; i < listSize; i++)
+  for (size_t i = 0; i < listSize; i++)
     generic.add_options()
 
         (E2PROM_list[i].ShortName.c_str(), E2PROM_list[i].FullName.c_str());

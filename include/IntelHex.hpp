@@ -33,8 +33,8 @@ class IHEX_RECORD {
    */
   IHEX_RECORD() = default;
   IHEX_RECORD(const uint16_t addr, const char* data, const uint8_t size,
-              DATA_TYPE ttt)
-      : _offset{addr}, _data{data}, _reclen{size}, _rectype{ttt} {}
+              DATA_TYPE rectype)
+      : _offset{addr}, _data{data}, _reclen{size}, _rectype{rectype} {}
 
  private:
   friend std::ostream& operator<<(std::ostream& os, const IHEX_RECORD ih);
