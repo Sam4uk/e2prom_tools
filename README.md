@@ -7,7 +7,7 @@
 Генератор файлу для очищення EEPROM
 
 ### dependence
-sudo apt-get install libboost-all-dev make cmake
+sudo apt-get install libboost-all-dev make cmake libcurl4-gnutls-dev
 
 
 ```zsh

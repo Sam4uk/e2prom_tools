@@ -39,15 +39,22 @@ find_package(Boost 1.60 REQUIRED
 		system
 )
 
+add_compile_definitions(NANIT_SERIAL_NUMBER_URL="""https://docs.ieu.edu.ua/seriynyk.php?SN=4""")
+find_package(CURL REQUIRED)
+
 include_directories(${Boost_INCLUDE_DIRS})
 add_executable(e2clean 
 source/e2clean.cpp
 )
 
 add_executable(e2serial
-source/e2serial.cpp
+source/e2serial.cxx
 )
 
+target_link_libraries(e2serial 
+                      PRIVATE 
+                      ${CURL_LIBRARIES}
+ )
 
 target_link_libraries(e2clean 
 LINK_PUBLIC ${Boost_LIBRARIES}
