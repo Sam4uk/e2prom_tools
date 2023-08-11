@@ -1,6 +1,7 @@
 #include <curl/curl.h>
 #include <sysexits.h>
 
+#include <cmath>
 #include <cstdint>
 #include <iostream>
 #include <string>
@@ -20,6 +21,10 @@ constexpr uint32_t k_min_corect_number =
     (BUILD_YEAR_CH2 * 10 + BUILD_YEAR_CH3 - 1) * 1000 +
     (BUILD_MONTH_CH0 * 10 + BUILD_MONTH_CH1 - 1) * 100000 +
     (BUILD_DAY_CH0 * 10 + BUILD_DAY_CH0 - 1) * 10000000;
+
+void SerialMessage(uint32_t num) {
+std::cout<<"             "<<num<<std::endl;
+}
 
 // 0010123001;
 int main(void) {
@@ -60,6 +65,7 @@ int main(void) {
       char bytes[sizeof(sn)];
     };
     sn = serial_number;
+    SerialMessage(sn);
     std::cout << IHEX_RECORD(125, bytes, sizeof(sn), DATA_TYPE::RECORD_DAT)
               << IHEX_RECORD();
     // 010122001

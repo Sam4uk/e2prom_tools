@@ -8,6 +8,10 @@
 		}
 	],
 	"settings": {
+		"editor.rulers": [72, 80, 100, 120],
+		"C_Cpp.default.defines": [
+			"NANIT_SERIAL_NUMBER_URL"
+		],
 		"files.autoSave": "onFocusChange",
 		"files.associations": {
 			"cctype": "cpp",
