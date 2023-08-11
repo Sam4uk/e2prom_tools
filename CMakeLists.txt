@@ -43,6 +43,12 @@ include_directories(${Boost_INCLUDE_DIRS})
 add_executable(e2clean 
 source/e2clean.cpp
 )
+
+add_executable(e2serial
+source/e2serial.cpp
+)
+
+
 target_link_libraries(e2clean 
 LINK_PUBLIC ${Boost_LIBRARIES}
 )
