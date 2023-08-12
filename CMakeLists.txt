@@ -32,12 +32,12 @@ file(WRITE "${PROJECT_BINARY_DIR}/.gitignore" [=[
 *
 ]=])
 
-find_package(Boost 1.60 REQUIRED
-	COMPONENTS
-    program_options
-		filesystem
-		system
-)
+# find_package(Boost 1.60 REQUIRED
+# 	COMPONENTS
+#     program_options
+# 		filesystem
+# 		system
+# )
 
 IF( DEFINED variable )
     MESSAGE(STATUS "variable is defined" ${variable})
