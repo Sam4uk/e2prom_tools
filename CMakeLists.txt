@@ -39,7 +39,13 @@ find_package(Boost 1.60 REQUIRED
 		system
 )
 
-add_compile_definitions(NANIT_SERIAL_NUMBER_URL="""https://docs.ieu.edu.ua/seriynyk.php?SN=4""")
+IF( DEFINED variable )
+    MESSAGE(STATUS "variable is defined" ${variable})
+ELSE( DEFINED variable )
+    MESSAGE(STATUS "variable is not defined")
+ENDIF( DEFINED variable )
+
+add_compile_definitions(NANIT_SERIAL_NUMBER_URL="""${variable}""")
 find_package(CURL REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIRS})
