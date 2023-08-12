@@ -48,10 +48,10 @@ ENDIF( DEFINED variable )
 add_compile_definitions(NANIT_SERIAL_NUMBER_URL="""${variable}""")
 find_package(CURL REQUIRED)
 
-include_directories(${Boost_INCLUDE_DIRS})
-add_executable(e2clean 
-source/e2clean.cpp
-)
+# include_directories(${Boost_INCLUDE_DIRS})
+# add_executable(e2clean 
+# source/e2clean.cpp
+# )
 
 add_executable(e2serial
 source/e2serial.cxx
@@ -62,9 +62,9 @@ target_link_libraries(e2serial
                       ${CURL_LIBRARIES}
  )
 
-target_link_libraries(e2clean 
-LINK_PUBLIC ${Boost_LIBRARIES}
-)
+# target_link_libraries(e2clean 
+# LINK_PUBLIC ${Boost_LIBRARIES}
+# )
 
 include_directories(
     "./include"
