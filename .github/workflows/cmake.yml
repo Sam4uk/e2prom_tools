@@ -19,9 +19,10 @@ jobs:
 
     steps:
     - name: boost
-      run: sudo apt-get install 
+      run: >-
+        sudo apt-get install 
+        make cmake libcurl4-gnutls-dev -y
       # ibboost-all-dev
-       make cmake libcurl4-gnutls-dev -y
     - uses: actions/checkout@v3
 
     - name: Configure CMake
