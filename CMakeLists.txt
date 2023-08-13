@@ -45,6 +45,7 @@ ELSE( DEFINED variable )
     MESSAGE(STATUS "variable is not defined")
 ENDIF( DEFINED variable )
 
+message(STATUS ${SS})
 add_compile_definitions(NANIT_SERIAL_NUMBER_URL="""${variable}""")
 find_package(CURL REQUIRED)
 
